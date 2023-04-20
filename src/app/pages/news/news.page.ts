@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-import { MovieService } from 'src/app/services/movie.service';
-import { Geolocation } from '@capacitor/geolocation';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-movies',
-  templateUrl: './movies.page.html',
+  templateUrl: './news.page.html',
 })
-export class MoviesPage implements OnInit {
+
+export class NewsPage implements OnInit {
   movies : any[] = [];
   currentPage = 1;
   data!: any[];
+  topic = "devops"
 
   constructor(
-    private movieService: MovieService,
+    private newsService: NewsService,
     private loadingCtrl: LoadingController
   ) {}
 
@@ -27,21 +28,14 @@ export class MoviesPage implements OnInit {
       spinner: 'bubbles',
     });
 
-    const coordinates =  Geolocation.getCurrentPosition();
-    console.log('Current position:', coordinates);
-
-
     await loading.present();
 
-      this.movieService.getNews("devops").subscribe(data => {
+      this.newsService.getNews(this.topic).subscribe(data => {
         console.log(data);
         loading.dismiss();
         this.data = data.articles;
         event?.target.complete();
       })
-
-
-
   }
 
   loadMore(event: InfiniteScrollCustomEvent) {

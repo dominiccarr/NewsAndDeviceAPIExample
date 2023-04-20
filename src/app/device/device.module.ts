@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LocationPageRoutingModule } from './location-routing.module';
+import { LocationPageRoutingModule } from './device-routing.module';
 
-import { LocationPage } from './location.page';
+import { DevicePage } from './device.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { LocationPage } from './location.page';
     IonicModule,
     LocationPageRoutingModule
   ],
-  declarations: [LocationPage]
+  declarations: [DevicePage]
 })
-export class LocationPageModule {}
+export class DeviceModule {}

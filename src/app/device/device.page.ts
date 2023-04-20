@@ -8,11 +8,10 @@ import { Dialog, PromptResult } from '@capacitor/dialog';
 
 @Component({
   selector: 'app-location',
-  templateUrl: './location.page.html',
-  styleUrls: ['./location.page.scss'],
+  templateUrl: './device.page.html'
 })
 
-export class LocationPage implements OnInit {
+export class DevicePage implements OnInit {
 
   latitude = 0
   longitude = 0

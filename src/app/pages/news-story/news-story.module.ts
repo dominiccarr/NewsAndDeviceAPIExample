@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MoviesDetailsPageRoutingModule } from './movies-details-routing.module';
+import { MoviesDetailsPageRoutingModule } from './news-story-routing.module';
 
-import { MoviesDetailsPage } from './movies-details.page';
+import { NewsStoryPage } from './news-story.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { MoviesDetailsPage } from './movies-details.page';
     IonicModule,
     MoviesDetailsPageRoutingModule
   ],
-  declarations: [MoviesDetailsPage]
+  declarations: [NewsStoryPage]
 })
-export class MoviesDetailsPageModule {}
+export class NewsStoryModule {}

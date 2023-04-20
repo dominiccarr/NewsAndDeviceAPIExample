@@ -4,24 +4,24 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'movies',
+    redirectTo: 'news',
     pathMatch: 'full',
   },
   {
-    path: 'movies',
+    path: 'news',
     loadChildren: () =>
-      import('./pages/movies/movies.module').then((m) => m.MoviesPageModule),
+      import('./pages/news/news.module').then((m) => m.NewsModule),
   },
   {
-    path: 'movies/:id',
+    path: 'news/:id',
     loadChildren: () =>
-      import('./pages/movies-details/movies-details.module').then(
-        (m) => m.MoviesDetailsPageModule
+      import('./pages/news-story/news-story.module').then(
+        (m) => m.NewsStoryModule
       ),
   },
   {
-    path: 'location',
-    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+    path: 'device',
+    loadChildren: () => import('./device/device.module').then( m => m.DeviceModule)
   },
 ];
  

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieService } from 'src/app/services/movie.service';
+import { NewsService } from 'src/app/services/news.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-movie-details',
-  templateUrl: './movies-details.page.html',
+  templateUrl: './news-story.page.html',
 })
-export class MoviesDetailsPage implements OnInit {
+export class NewsStoryPage implements OnInit {
   newsArticle: any | null = null;
   id = "";
   url = ""
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService
+    private newsService: NewsService
   ) {}
 
   ngOnInit() {
