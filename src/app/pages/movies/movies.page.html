@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Trending Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let item of data; let i = index" [routerLink]="[i]">
+      <ion-avatar slot="start">
+        <img [src]="item.urlToImage" />
+      </ion-avatar>
+
+      <ion-label class="ion-text-wrap">
+        <h3>{{ item.title | slice:0:30}}</h3>
+        <p>{{ item.description | slice:0:100 }}
+        </p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

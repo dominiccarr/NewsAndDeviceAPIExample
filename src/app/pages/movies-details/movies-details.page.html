@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ newsArticle?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="newsArticle as newsArticle;">
+   <img src={{newsArticle.urlToImage}} />
+
+    <ion-card-header>
+      <ion-card-title> {{ newsArticle?.title }} </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label color="medium">{{ newsArticle.description }}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="openHomepage(newsArticle.homepage)" *ngIf="newsArticle?.homepage">
+    <ion-icon name="open-outline" slot="start"></ion-icon>
+    Open Homepage
+  </ion-button>
+</ion-footer>

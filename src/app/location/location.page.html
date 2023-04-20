@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Location Coordinates</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>
+        Latitue
+      </ion-label>
+      <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Longitude
+      </ion-label>
+      <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+    </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Network Info</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          Are we connected?
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{connected}}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          What kind of connection?
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{networkStatus}}</ion-badge>
+        <ion-button size="small" (click)="getNetworkStatus()">
+          Get network status
+         </ion-button>
+      </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Device Info</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>
+            UUID
+          </ion-label>
+          <ion-badge color="danger" slot="end">{{uuid}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            System Language
+          </ion-label>
+          <ion-badge color="danger" slot="end">{{language}}</ion-badge>
+        </ion-item>
+        </ion-list>
+
+        <ion-text *ngIf="promptRes?.cancelled">
+          <h1>YOU CAN'T CANCEL!</h1>
+        </ion-text>
+        
+</ion-content>
