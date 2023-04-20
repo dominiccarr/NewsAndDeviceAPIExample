@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
+
 export class NewsService {
   API_KEY = 'e40d07f00b094602953cc3bf8537477e';
 
