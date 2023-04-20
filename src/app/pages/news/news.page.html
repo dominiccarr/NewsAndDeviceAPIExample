@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item button *ngFor="let item of data; let i = index" [routerLink]="[i]">
+    <ion-item button *ngFor="let item of data; let i = index" (click)="openDetailsWithState(i)">
       <ion-avatar slot="start">
         <img [src]="item.urlToImage" />
       </ion-avatar>

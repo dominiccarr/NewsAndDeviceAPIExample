@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 import { NewsService } from 'src/app/services/news.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -15,7 +16,8 @@ export class NewsPage implements OnInit {
 
   constructor(
     private newsService: NewsService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -41,5 +43,15 @@ export class NewsPage implements OnInit {
   loadMore(event: InfiniteScrollCustomEvent) {
     this.currentPage++;
     this.loadMovies(event);
+  }
+
+  openDetailsWithState(index:number) {
+    console.log("click")
+    let navigationExtras: NavigationExtras = {
+      state: {
+        story: this.data[index]
+      }
+    };
+    this.router.navigate(['news_item'], navigationExtras);
   }
 }
